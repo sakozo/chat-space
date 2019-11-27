@@ -1,0 +1,56 @@
+html, body {
+  height: 100%;
+}
+.wrapper {
+  height: 100%;
+}
+
+.side_top {
+  display: flex;
+  background-color: #253141;
+  width: 300px;
+  height: 100px;
+  &__user_box{
+    padding: 0px 20px;
+    line-height: 100px;
+    &__name{
+      font-size: 16px;
+      font-weight: bold;
+      color: #FFFFFF;
+    }
+  }
+  &__icons {
+    display: flex;
+    line-height: 100px;
+    margin-left: 170px;
+    &__group_edit {
+      margin-right: 7px;
+      font-size: 15px;
+    }
+    &__account_edit {
+      font-size: 15px;
+    }
+    & :before{
+      color: white;
+    }
+  }
+}
+
+.side_content {
+  width: 300px;
+  background-color: #2f3e51;
+  height: calc(100% - 100px);
+  &__groups_name {
+    padding: 0px 20px;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 20px 20px 0px 20px;
+  }
+  &__resent_message {
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0px 20px 40px 20px;
+  }
+}

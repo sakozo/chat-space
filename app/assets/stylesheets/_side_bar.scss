@@ -25,7 +25,9 @@ html, body {
     &__icons {
       display: flex;
       line-height: 100px;
-      margin-left: 170px;
+      margin-left: 150px;
+      //justify-content: space-around;
+
       &__group-edit {
         margin-right: 7px;
         font-size: 15px;

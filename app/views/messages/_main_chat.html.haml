@@ -20,3 +20,12 @@
       .main-chat__messages__message__message-text
         this is a sample message
         
+  %form.main-chat__form{:action => "/", :method => "post"}
+    .main-chat__form__input-form
+      %input.main-chat__form__input-form__text{:name => "text", :placeholder => "type a message", :type => "text", :value => ""}/
+      %label.main-chat__form__input-form__file{class: "input-box__image"}
+        %input.main-chat__form__input-form__file__input{type: "file"}
+        .main-chat__form__input-form__file__icon
+          = icon('fas', 'image')
+      
+      %input.main-chat__form__input-form__submit-button{:type => "submit", :value => "Send"}

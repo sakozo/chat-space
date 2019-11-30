@@ -16,11 +16,11 @@
         %p.message__message-info__date 2019/11/27(Thu) 20:00:00
       %p.message__message-text this is a sample message
   .form-area        
-    %form.form{:action => "/", :method => "post"}
+    %form.form{action: "/", method: "post"}
       .input-form
-        %input.input-form__text{:name => "text", :placeholder => "type a message", :type => "text", :value => ""}/
+        %input.input-form__text{name: "text", placeholder: "type a message", type:  "text"}/
         %label.input-form__text__file{class: "input-box__image"}
           %input.input-form__text__file__input{type: "file"}
             .input-form__text__file__icon
               = icon('fas', 'image')
-      %input.form__submit-button{:type => "submit", :value => "Send"}
+      %input.form__submit-button{type: "submit", value: "Send"}

@@ -1,0 +1,68 @@
+html, body {
+  height: 100%;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+}
+.side_bar {
+  height: 100%;
+  width: 300px;
+  .side-top {
+    padding: 0px 20px;
+    display: flex;
+    height: 100px;
+    background-color: #253141;
+    &__user-box{
+      width: 300px;
+      display: flex;
+      justify-content: space-between;
+      line-height: 100px;
+      &__name{
+        font-size: 16px;
+        font-weight: bold;
+        color: #FFFFFF;
+      }
+      &__icons {
+        display: flex;
+        width: 40px;
+        &__create-group {
+          margin-right: 7px;
+          font-size: 15px;
+          cursor: pointer;
+        }
+        &__edit-account {
+          font-size: 15px;
+          cursor: pointer;
+        }
+        & :before{
+          color: white;
+        }
+      }
+    }
+  }
+
+  .side-contents {
+    width: 260px;
+    background-color: #2f3e51;
+    height: calc(100% - 120px);
+    padding: 20px 20px 0px 20px;
+    .group{
+      margin-bottom: 40px;
+      .group-link {
+        text-decoration: none;
+        &__group-name {
+          color: #FFFFFF;
+          font-size: 15px;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+        &__last-message {
+          color: #FFFFFF;
+          font-size: 11px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

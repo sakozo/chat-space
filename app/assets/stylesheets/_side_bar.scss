@@ -7,56 +7,62 @@ html, body {
 }
 .side_bar {
   height: 100%;
-
   background-color: #253141;
   width: 300px;
-  &__side-top {
+  
+  .side-top {
+    padding: 0px 20px;
     display: flex;
     height: 100px;
+    
     &__user-box{
-      padding: 0px 20px;
+      width: 300px;
+      display: flex;
+      justify-content: space-between;
+      
       line-height: 100px;
       &__name{
         font-size: 16px;
         font-weight: bold;
         color: #FFFFFF;
       }
-    }
-    &__icons {
-      display: flex;
-      line-height: 100px;
-      margin-left: 150px;
-      //justify-content: space-around;
-
-      &__group-edit {
-        margin-right: 7px;
-        font-size: 15px;
-      }
-      &__account-edit {
-        font-size: 15px;
-      }
-      & :before{
-        color: white;
+      &__icons {
+        display: flex;
+        width: 40px;
+        &__group-edit {
+          margin-right: 7px;
+          font-size: 15px;
+          cursor: pointer;
+        }
+        &__account-edit {
+          font-size: 15px;
+          cursor: pointer;
+        }
+        & :before{
+          color: white;
+        }
       }
     }
   }
 
-  &__side-content {
-    width: 300px;
-    background-color: #2f3e51;
-    height: calc(100% - 100px);
-    &__groups-name {
-      padding: 0px 20px;
+.side-contents {
+  width: 260px;
+  background-color: #2f3e51;
+  height: calc(100% - 100px);
+  padding: 20px 20px 0px 20px;
+  .group{
+    margin-bottom: 40px;
+    &__group-name {
       color: #FFFFFF;
       font-size: 15px;
       font-weight: bold;
-      padding: 20px 20px 0px 20px;
+      margin-bottom: 5px;
     }
-    &__resent-message {
+    &__last-message {
       color: #FFFFFF;
       font-size: 11px;
       font-weight: bold;
-      padding: 0px 20px 40px 20px;
     }
   }
+}
 }

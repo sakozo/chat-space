@@ -1,31 +1,29 @@
 .main-chat
-  .main-chat__header
-    .main-chat__header__active-group
-      %h2 Group name
+  .header
+    .header__active-group
+      %h2.header__active-group__name Group name
       %ul
-        .main-chat__header__active-group__member-list
-          %li
-            .main-chat__header__active-group__member-list__member
-              sample
-    %a.main-chat__header__edit-button
-      Edit
+        .header__active-group__member-list
+          Member :
+          %li.header__active-group__member-list__member a
+          %li.header__active-group__member-list__member b
+
+    = link_to "#", class: "header__edit-link" do
+      .header__edit-link__edit-button Edit
   
-  .main-chat__messages
-    .main-chat__messages__message
-      .main-chat__messages__message__message-info
-        %p.main-chat__messages__message__message-info__name
-          syouya
-        %p.main-chat__messages__message__message-info__date
-          2019/11/27(Thu) 20:00:00
-      .main-chat__messages__message__message-text
-        this is a sample message
-        
-  %form.main-chat__form{:action => "/", :method => "post"}
-    .main-chat__form__input-form
-      %input.main-chat__form__input-form__text{:name => "text", :placeholder => "type a message", :type => "text", :value => ""}/
-      %label.main-chat__form__input-form__file{class: "input-box__image"}
-        %input.main-chat__form__input-form__file__input{type: "file"}
-        .main-chat__form__input-form__file__icon
-          = icon('fas', 'image')
-      
-      %input.main-chat__form__input-form__submit-button{:type => "submit", :value => "Send"}
+  .messages
+    .message
+      .message__message-info
+        %p.message__message-info__name syouya
+        %p.message__message-info__date 2019/11/27(Thu) 20:00:00
+      %p.message__message-text this is a sample message
+
+  .form-area        
+    %form.form{:action => "/", :method => "post"}
+      .input-form
+        %input.input-form__text{:name => "text", :placeholder => "type a message", :type => "text", :value => ""}/
+        %label.input-form__text__file{class: "input-box__image"}
+          %input.input-form__text__file__input{type: "file"}
+            .input-form__text__file__icon
+              = icon('fas', 'image')
+      %input.form__submit-button{:type => "submit", :value => "Send"}

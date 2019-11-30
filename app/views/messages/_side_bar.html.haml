@@ -3,15 +3,15 @@
     .side-top__user-box 
       %p.side-top__user-box__name sample
       %ul.side-top__user-box__icons
-        %li.side-top__user-box__icons__group-edit
+        %li.side-top__user-box__icons__create-group
           = link_to "#" do
             = icon('fas', 'edit')
-        %li.side-top__user-box__icons__account-edit
+        %li.side-top__user-box__icons__edit-account
           = link_to "#" do
             = icon('fas', 'cog')
 
   .side-contents
     .group
-      = link_to "#" do
-        %p.group__group-name sample
-        %p.group__last-message Good bye world!!
+      = link_to "#", class: "group-link" do
+        %p.group-link__group-name sample
+        %p.group-link__last-message Good bye world!!

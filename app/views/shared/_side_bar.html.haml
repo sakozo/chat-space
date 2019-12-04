@@ -11,7 +11,8 @@
           = link_to edit_user_path(current_user.id) do
             = icon('fas', 'cog')
   .side-contents
-    .group
-      = link_to "#", class: "group-link" do
-        %p.group-link__group-name sample
-        %p.group-link__last-message Good bye world!!
+    - current_user.groups.each do |group|
+      .group
+        = link_to "#", class: "group-link" do
+          %p.group-link__group-name= group.name
+          %p.group-link__last-message まだメッセージはありません

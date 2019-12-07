@@ -1,12 +1,12 @@
 .main-chat
   .header
     .header__active-group
-      %h2.header__active-group__name Group name
+      %h2.header__active-group__name= @group.name
       %ul
         .header__active-group__member-list
-          Member :
-          %li.header__active-group__member-list__member a
-          %li.header__active-group__member-list__member b
+          Member : 
+          - @group.users.each do |user|
+            %li.header__active-group__member-list__member=user.name
     = link_to "#", class: "header__edit-link" do
       .header__edit-link__edit-button Edit
 

@@ -1,5 +1,6 @@
 .main-chat {
   width: calc(100% - 300px);
+
   .header {
     height: 99px;
     display: flex;
@@ -37,6 +38,8 @@
     background-color: #fafafa;
     padding: 46px 40px 46px 40px;
     height: calc(100% - 281px);
+    overflow: scroll;
+    overflow:hidden;
     .message {
       margin-bottom: 40px;
       &__message-info {

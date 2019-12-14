@@ -39,7 +39,9 @@
     padding: 46px 40px 46px 40px;
     height: calc(100% - 281px);
     overflow: scroll;
-    overflow:hidden;
+    &::-webkit-scrollbar {
+      display:none;
+    }
     .message {
       margin-bottom: 40px;
       &__message-info {

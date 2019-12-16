@@ -1,8 +1,7 @@
 .message{data: {message_id: message.id}}
   .message__message-info
     %p.message__message-info__name= message.user.name
-    %p.message__message-info__date= message.created_at.strftime("%Y/%m/%d %H:%M")
+    %p.message__message-info__date= message.created_at.strftime("%Y/%m/%d(%a) %H:%M")
   - if message.body.present?
     %p.message__message-text= message.body
   = image_tag message.image.url, class: 'message__message-img' if message.image.present?
- 

@@ -1,8 +1,9 @@
 $(function(){
+  
   function buildHTML(message){
     if (message.image) {
       var html = `
-      <div class="message">
+      <div class="message" data-message-id=${message.id}>
         <div class="message__message-info">
           <p class="message__message-info__name">${message.name}</p>
           <p class="message__message-info__date">${message.date}</p>
@@ -12,7 +13,7 @@ $(function(){
       </div>`
     } else {
       var html = `
-      <div class="message">
+      <div class="message" data-message-id=${message.id}>
         <div class="message__message-info">
           <p class="message__message-info__name">${message.name}</p>
           <p class="message__message-info__date">${message.date}</p>
@@ -48,4 +49,33 @@ $(function(){
       $('.form__submit-button').prop('disabled', false);
     })
   });
+
+  if(window.location.href.match(/\/groups\/\d+\/messages/)){
+    var reloadMessages = function() {
+      last_message_id = $('.message:last').data('message-id');
+
+      //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+      last_message_id = $('.message:last').data('message-id');
+      $.ajax({
+        url: "api/messages",
+        type: 'get',
+        dataType: 'json',
+        data: {id: last_message_id}
+      })
+      .done(function(messages) {
+        var insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+        });
+        $('.messages').append(insertHTML);
+        if(insertHTML.length > 0){
+          $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+        }
+      })
+      .fail(function() {
+        alert("自動更新に失敗しました");
+      });
+    };
+    setInterval(reloadMessages, 7000);
+  }
 });

@@ -53,7 +53,6 @@ $(function(){
   if(window.location.href.match(/\/groups\/\d+\/messages/)){
     var reloadMessages = function() {
       last_message_id = $('.message:last').data('message-id');
-      console.log(last_message_id);
 
       //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
       last_message_id = $('.message:last').data('message-id');

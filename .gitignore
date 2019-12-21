@@ -19,3 +19,4 @@
 # 末尾に次の記述を追加
 public/uploads/*
 public/*
+config/secrets.yml
